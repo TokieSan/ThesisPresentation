@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import { Card, CardHeader, CardTitle, CardContent } from '@/app/components/ui/card';
+import { Button } from '@/app/components/ui/button';
 import { ChevronRight } from 'lucide-react';
 
 const ParanoidAndroidPresentation = () => {
