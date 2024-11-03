@@ -1,34 +1,44 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ChevronRight } from 'lucide-react';
-import { sections, sectionOrder } from '@/components/sections'; // Import from separate file
-
-const ContentDetail = ({ detail }) => {
-  if (detail.type === "image") {
-    return (
-      <div className="w-full my-4">
-        <img 
-          src={detail.content}
-          alt={detail.alt || "Content image"}
-          className="w-full h-auto object-contain rounded-lg"
-        />
-      </div>
-    );
-  }
-  return (
-    <p className="text-gray-300 leading-relaxed">
-      {detail.content}
-    </p>
-  );
-};
 
 const ParanoidAndroidPresentation = () => {
+  const [sections, setSections] = useState({});
+  const [sectionOrder, setSectionOrder] = useState([]);
   const [activeSection, setActiveSection] = useState(null);
   const [completedSections, setCompletedSections] = useState(new Set());
   const [isAnimating, setIsAnimating] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const loadSections = async () => {
+      try {
+        // First try to load from localStorage
+        const savedSections = localStorage.getItem('presentationSections');
+        const savedOrder = localStorage.getItem('sectionOrder');
+        
+        if (savedSections && savedOrder) {
+          setSections(JSON.parse(savedSections));
+          setSectionOrder(JSON.parse(savedOrder));
+        } else {
+          // If no local storage data, load from API
+          const response = await fetch('/api/sections');
+          const data = await response.json();
+          setSections(data.sections);
+          setSectionOrder(data.sectionOrder);
+        }
+      } catch (error) {
+        console.error('Error loading sections:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadSections();
+  }, []);
 
   const handleSectionClick = (section) => {
     setIsAnimating(true);
@@ -60,6 +70,33 @@ const ParanoidAndroidPresentation = () => {
     return "#34495e";
   };
 
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
+        <div className="text-xl text-emerald-400">Loading presentation...</div>
+      </div>
+    );
+  }
+
+  const ContentDetail = ({ detail }) => {
+    if (detail.type === "image") {
+      return (
+        <div className="w-full my-4">
+          <img 
+            src={detail.content}
+            alt={detail.alt || "Content image"}
+            className="w-full h-auto object-contain rounded-lg"
+          />
+        </div>
+      );
+    }
+    return (
+      <p className="text-gray-300 leading-relaxed">
+        {detail.content}
+      </p>
+    );
+  };
+
   return (
     <div className="min-h-screen bg-gray-900 text-white py-8">
       <div className="container mx-auto px-4 flex flex-col items-center gap-16">
@@ -70,7 +107,7 @@ const ParanoidAndroidPresentation = () => {
             className="w-full transition-transform duration-300 ease-in-out"
             style={{ transform: isAnimating ? 'scale(0.95)' : 'scale(1)' }}
           >
-            <defs>
+          <defs>
               <filter id="glow">
                 <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
                 <feMerge>
@@ -165,7 +202,7 @@ const ParanoidAndroidPresentation = () => {
         </Button>
 
         {/* Content Section */}
-        {activeSection && (
+        {activeSection && sections[activeSection] && (
           <div className="w-full max-w-4xl mx-auto">
             <Card className="bg-gray-800 border-none shadow-xl">
               <CardHeader className="bg-gray-800/50 border-b border-gray-700 p-6">
