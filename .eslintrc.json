@@ -1,11 +1,7 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"],
-  "overrides": [
-    {
-      "files": ["components/*", "app/components/*"],
-      "rules": {
-        "rule-name": "off"
-      }
-    }
-  ]
+  "extends": ["next/core-web-vitals", "next/typescript"],gg
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-empty-object-type": "warn"
+  }
 }
