@@ -121,37 +121,66 @@
       }
     ]
   },
-  "agents": {
-    "title": "Multi-Agent System",
+"agents": {
+    "title": "Agentic Environment Pipeline",
     "content": [
       {
-        "title": "Agent Architecture Overview",
+        "title": "Asynchronous Operations",
         "details": [
           {
             "type": "text",
-            "content": "Our multi-agent system utilizes advanced coordination mechanisms:"
-          },
-          {
-            "type": "text",
-            "content": "• Asynchronous operation management with asyncio\n• Centralized state management with rollback capabilities\n• Periodic axiom synchronization across agent network\n• Advanced inter-agent communication protocols"
+            "content": "Utilizes asyncio to manage concurrent actions across multiple agents, allowing them to operate independently without waiting for one another to complete tasks. This concurrency is essential for efficient operation in complex environments where multiple agents need to interact or update shared states simultaneously."
           }
         ]
       },
       {
-        "title": "Collaborative Proof Generation",
+        "title": "Centralized State Management",
         "details": [
           {
             "type": "text",
-            "content": "The agent system enables sophisticated proof collaboration:"
-          },
+            "content": "CentralizedStateManager maintains a shared list of axioms accessible by all agents. It includes a rollback mechanism that saves the state history and enables agents to revert to previous states in case of invalid axioms, supporting data consistency and error recovery across agents."
+          }
+        ]
+      },
+      {
+        "title": "Axiom Synchronization",
+        "details": [
           {
             "type": "text",
-            "content": "• Parallel exploration of proof paths\n• Dynamic task allocation based on agent specialization\n• Automated error detection and correction\n• Real-time proof validation and verification"
+            "content": "Each agent periodically syncs its local axioms with the centralized shared state managed by CentralizedStateManager, ensuring it has the latest validated axioms. This synchronization keeps all agents working with up-to-date information, essential for coordinated proof generation and validation."
+          }
+        ]
+      },
+      {
+        "title": "Axiom Generator Agent",
+        "details": [
+          {
+            "type": "text",
+            "content": "Responsible for generating new axioms based on a specified domain using an LLM (simulated with the ollama API for testing purposes). Once generated, the agent updates the centralized shared state with these axioms, making them available for other agents like the validator."
+          }
+        ]
+      },
+      {
+        "title": "Logic Validator Agent",
+        "details": [
+          {
+            "type": "text",
+            "content": "Validates the axioms in the shared state to ensure they meet specific syntactic and semantic rules. If validation fails, the agent initiates a rollback of the shared axioms to a previous valid state and sends a message to the Axiom Generator to adjust and regenerate the axioms."
+          }
+        ]
+      },
+      {
+        "title": "Communication Protocol",
+        "details": [
+          {
+            "type": "text",
+            "content": "Enables agents to send and receive messages to coordinate actions. For example, the Logic Validator Agent can inform the Axiom Generator Agent when adjustments are needed. This communication protocol supports feedback loops, making collaborative proof construction and validation efficient."
           }
         ]
       }
     ]
   },
+
   "finetuning": {
     "title": "Model Finetuning",
     "content": [
