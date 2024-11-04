@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Plus, Trash2, Save, ChevronDown, ChevronUp, Download, Presentation, Home } from 'lucide-react';
+import NavigationButtons, { reloadFromFile } from '@/components/NavigationButtons';
 import {
   Accordion,
   AccordionContent,
@@ -233,28 +234,21 @@ const SectionEditor = () => {
   const navigateHome = () => {
       window.location.href = '/';
   };
+
+  const navigateToEditor = () => {
+    window.location.href = '/editor';
+  };
+
   return (
     <div className="min-h-screen bg-gray-900 text-white p-8">
-    {/* Navigation Buttons */}
-    <div className="fixed top-4 right-4 z-50 flex space-x-4">
-      <Button
-        onClick={navigateHome}
-        variant="outline"
-        size="icon"
-        className="bg-gray-800 hover:bg-gray-700 border-gray-700 hover:border-gray-600 text-emerald-400 hover:text-emerald-300"
-      >
-        <Home className="h-5 w-5" />
-      </Button>
-      <Button
-        onClick={navigateToSlides}
-        variant="outline"
-        size="icon"
-        className="bg-gray-800 hover:bg-gray-700 border-gray-700 hover:border-gray-600 text-emerald-400 hover:text-emerald-300"
-      >
-        <Presentation className="h-5 w-5" />
-      </Button>
-    </div>
-      <Card className="bg-gray-800 border-none shadow-xl">
+      <NavigationButtons 
+        onNavigateHome={navigateHome}
+        onNavigateEditor={navigateToEditor}
+        onNavigateSlides={navigateToSlides}
+        onReloadFromFile={reloadFromFile}
+        showEditor={false}
+      />
+    <Card className="bg-gray-800 border-none shadow-xl">
         <CardHeader className="bg-gray-800/50 border-b border-gray-700">
           <div className="flex justify-between items-center">
             <CardTitle className="text-2xl text-emerald-400">Section Editor</CardTitle>

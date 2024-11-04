@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ChevronRight, Settings, Presentation } from 'lucide-react';
+import NavigationButtons, { reloadFromFile } from '@/components/NavigationButtons';
 
 const ParanoidAndroidPresentation = () => {
   const [sections, setSections] = useState({});
@@ -101,6 +102,10 @@ const ParanoidAndroidPresentation = () => {
     window.location.href = '/editor'; 
   };
 
+  const navigateHome = () => {
+    window.location.href = '/'; 
+  };
+
   const navigateToSlides = () => {
       window.location.href = '/slides';
   };
@@ -108,37 +113,13 @@ const ParanoidAndroidPresentation = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-white py-8">
       <div className="container mx-auto px-4 flex flex-col items-center gap-16">
-      {/* Editor Button */}
-      <div className="fixed top-4 right-4 z-50">
-        <Button
-          onClick={navigateToEditor}
-          variant="outline"
-          size="icon"
-          className="bg-gray-800 hover:bg-gray-700 border-gray-700 hover:border-gray-600 text-emerald-400 hover:text-emerald-300"
-        >
-          <Settings className="h-5 w-5" />
-        </Button>
-      </div>
-    {/* Control Buttons */}
-    <div className="fixed top-4 right-4 z-50 flex space-x-4">
-      <Button
-        onClick={navigateToSlides}
-        variant="outline"
-        size="icon"
-        className="bg-gray-800 hover:bg-gray-700 border-gray-700 hover:border-gray-600 text-emerald-400 hover:text-emerald-300"
-      >
-        <Presentation className="h-5 w-5" />
-      </Button>
-      <Button
-        onClick={navigateToEditor}
-        variant="outline"
-        size="icon"
-        className="bg-gray-800 hover:bg-gray-700 border-gray-700 hover:border-gray-600 text-emerald-400 hover:text-emerald-300"
-      >
-        <Settings className="h-5 w-5" />
-      </Button>
-    </div>
-        {/* Logo */}
+        <NavigationButtons 
+          onNavigateHome={navigateHome}
+          onNavigateEditor={navigateToEditor}
+          onNavigateSlides={navigateToSlides}
+          onReloadFromFile={reloadFromFile}
+        />
+      {/* Logo */}
         <div className="w-full max-w-md mx-auto">
           <svg 
             viewBox="0 0 300 380" 

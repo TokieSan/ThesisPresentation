@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight, Home, Maximize2, Minimize2 } from 'lucide-react';
+import NavigationButtons, { reloadFromFile } from '@/components/NavigationButtons';
 
 const ParanoidLogo = ({ sectionColors = {}, className = "", strokeColor = "#1abc9c" }) => {
   return (
@@ -259,17 +260,32 @@ const PresentationSlides = () => {
     }
   };
 
+
+  const navigateHome = () => {
+    window.location.href = '/';
+  };
+
+  const navigateToSlides = () => {
+    window.location.href = '/slides';
+  };
+
+  const navigateToEditor = () => {
+    window.location.href = '/editor';
+  };
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <div className="fixed top-4 right-4 z-50 flex space-x-4">
-        <Button
-          onClick={goHome}
-          variant="outline"
-          size="icon"
-          className="bg-gray-800 hover:bg-gray-700 border-gray-700 hover:border-gray-600 text-emerald-400 hover:text-emerald-300"
-        >
-          <Home className="h-5 w-5" />
-        </Button>
+        <NavigationButtons 
+          onNavigateHome={navigateHome}
+          onNavigateEditor={navigateToEditor}
+          onNavigateSlides={navigateToSlides}
+          onReloadFromFile={reloadFromFile}
+          showSlides={false}
+        />
+
+      </div>
+      <div className="fixed top-4 right-4 z-50 flex space-x-4">
+
         <Button
           onClick={toggleFullscreen}
           variant="outline"
@@ -283,6 +299,7 @@ const PresentationSlides = () => {
           )}
         </Button>
       </div>
+
 
       <div className="container mx-auto px-8 py-12 min-h-screen flex flex-col">
         <div className="flex-grow relative">
