@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Plus, Trash2, Save, ChevronDown, ChevronUp } from 'lucide-react';
+import { Plus, Trash2, Save, ChevronDown, ChevronUp, Download } from 'lucide-react';
 import {
   Accordion,
   AccordionContent,
@@ -201,6 +201,30 @@ const SectionEditor = () => {
     }
   };
 
+  const exportSectionsFile = () => {
+      // Generate the sections.js content
+      const fileContent = `// sections.js
+
+      export const sections = ${JSON.stringify(sections, null, 2)};
+
+      export const sectionOrder = ${JSON.stringify(sectionOrder, null, 2)};
+      `;
+
+      // Create a blob with the content
+      const blob = new Blob([fileContent], { type: 'text/javascript' });
+      const url = URL.createObjectURL(blob);
+
+      // Create a temporary link and trigger download
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'sections.js';
+      document.body.appendChild(link);
+      link.click();
+
+      // Clean up
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+  };
   return (
     <div className="min-h-screen bg-gray-900 text-white p-8">
       <Card className="bg-gray-800 border-none shadow-xl">
@@ -224,6 +248,13 @@ const SectionEditor = () => {
               >
                 <Save className="w-4 h-4 mr-2" />
                 Save Changes
+              </Button>
+              <Button
+                onClick={exportSectionsFile}
+                className="bg-purple-500 hover:bg-purple-600"
+              >
+                <Download className="w-4 h-4 mr-2" />
+                Export sections.js
               </Button>
             </div>
           </div>
