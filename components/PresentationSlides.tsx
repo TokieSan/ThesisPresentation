@@ -203,7 +203,7 @@ const PresentationSlides = () => {
         return (
           <div className="flex flex-col items-center justify-center h-full space-y-8">
             <ParanoidLogo className="w-2/3 max-w-2xl transition-all duration-500" />
-            <p className="text-xl text-gray-400">A Transformer-Based Cognitive Assistant with Formal Verification for Automated Task Sequencing and Hallucination Mitigation</p>
+            <p className="text-xl text-gray-400 whitespace-pre-wrap">A Transformer-Based Cognitive Assistant with Formal Verification for Automated Task Sequencing and Hallucination Mitigation</p>
           </div>
         );
       
@@ -247,7 +247,7 @@ const PresentationSlides = () => {
                       className="w-full max-w-2xl mx-auto rounded-lg shadow-lg"
                     />
                   ) : (
-                    <p className="text-lg text-gray-300 leading-relaxed">
+                    <p className="text-lg text-gray-300 leading-relaxed whitespace-pre-wrap">
                       {detail.content}
                     </p>
                   )}

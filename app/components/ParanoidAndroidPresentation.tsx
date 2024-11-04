@@ -92,7 +92,7 @@ const ParanoidAndroidPresentation = () => {
       );
     }
     return (
-      <p className="text-gray-300 leading-relaxed">
+      <p className="text-gray-300 leading-relaxed whitespace-pre-wrap">
         {detail.content}
       </p>
     );
