@@ -199,21 +199,8 @@
         "details": [
           {
             "type": "image",
-            "content": "https://i.imgur.com/mODV9dL.png",
+            "content": "https://svgur.com/i/1CED.svg",
             "alt": "Chart for logic engine"
-          }
-        ]
-      },
-      {
-        "title": "Search & Optimization",
-        "details": [
-          {
-            "type": "text",
-            "content": "Advanced search capabilities enhance proof finding:"
-          },
-          {
-            "type": "text",
-            "content": "• Parallel Monte Carlo Tree Search implementation\n• Intelligent pruning strategies for search optimization\n• Sophisticated caching system for repeated patterns\n• Custom heuristics for search space reduction"
           }
         ]
       }
