@@ -240,17 +240,19 @@ const PresentationSlides = () => {
                     animation: `fadeIn 0.5s ease-out forwards ${index * 0.1}s`
                   }}
                 >
-                  {detail.type === 'image' ? (
+                {detail.type === 'image' ? (
+                    <div className="flex justify-center items-center h-[60vh]">
                     <img 
                       src={detail.content}
                       alt={detail.alt || "Content image"}
-                      className="w-full max-w-2xl mx-auto rounded-lg shadow-lg"
+                      className="max-w-full max-h-full object-contain rounded-lg shadow-lg"
                     />
-                  ) : (
-                    <p className="text-lg text-gray-300 leading-relaxed whitespace-pre-wrap">
-                      {detail.content}
-                    </p>
-                  )}
+                    </div>
+                ) : (
+                <p className="text-lg text-gray-300 leading-relaxed whitespace-pre-wrap">
+                    {detail.content}
+                </p>
+                )} 
                 </div>
               ))}
             </div>
