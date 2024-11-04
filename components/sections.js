@@ -164,28 +164,36 @@
     "title": "Model Finetuning",
     "content": [
       {
-        "title": "Advanced Training Techniques",
+        "title": "LLM Fine-tuning Pipeline Overview",
         "details": [
           {
             "type": "text",
-            "content": "Our finetuning approach incorporates several innovative techniques:"
+            "content": "Key Components:\n1. Dependencies\n   - PyTorch (ML Framework)\n   - Transformers (Hugging Face)\n   - PEFT (Parameter-Efficient Fine-Tuning)\n   - Datasets (Data Management)"
           },
           {
             "type": "text",
-            "content": "• Synthetic proof generation with 94% axiom consistency\n• Custom loss functions optimized for theorem proving\n• Dynamic batch sizing for optimal training efficiency\n• Continuous learning system for model improvement"
+            "content": "LoRA (Low-Rank Adaptation) Explained:\n- 🎯 Purpose: Efficient fine-tuning with minimal resources\n- 💡 Key Concept: Updates only a small subset of model parameters\n- 🔑 Benefits:\n  - 95% less trainable parameters\n  - Significantly reduced memory usage\n  - Faster training time\n  - Easily swappable adaptors"
+          },
+          {
+            "type": "text",
+            "content": "Setup Requirements:\n- CUDA-compatible GPU\n- Python 3.8+\n- 16GB+ GPU RAM\n- SSD for model storage"
           }
         ]
       },
       {
-        "title": "Data Enhancement & Augmentation",
+        "title": "Technical Implementation",
         "details": [
           {
-            "type": "text",
-            "content": "Sophisticated data handling ensures high-quality training:"
+            "type": "image",
+            "content": "https://svgshare.com/s/1CD2"
           },
           {
             "type": "text",
-            "content": "• Advanced proof variation generation\n• Logical validity preservation in augmented data\n• Automated theorem incorporation pipeline\n• Continuous dataset expansion and refinement"
+            "content": "Key Features:\n1. Model Agnostic Design\n   - Works with any locally installed LLM\n   - Automatic fallback mechanisms\n\n2. Flexible Dataset Handling\n   - Automatic formatting\n   - Built-in tokenization\n\n\n   "
+          },
+          {
+            "type": "text",
+            "content": "3. Optimized Training\n   - Mixed precision (FP16)\n   - Checkpointing\n   - Progress monitoring"
           }
         ]
       }
