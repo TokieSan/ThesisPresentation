@@ -18,8 +18,8 @@ An interactive presentation component built with Next.js and React, featuring a 
 
 ### Prerequisites
 
-- Node.js 18.x or higher
-- npm or yarn
+- Node.js 18.x
+- npm or yarn, etc
 
 ### Installation
 
