@@ -37,31 +37,44 @@
     ]
   },
   "frontend": {
-    "title": "Frontend Development",
+    "title": "Frontend Development ",
     "content": [
       {
-        "title": "Interactive Visualization System",
+        "title": "Educational Platform - Interactive Axiom Visualization",
         "details": [
           {
             "type": "text",
-            "content": "Our frontend infrastructure combines advanced visualization capabilities with intuitive user interfaces:"
+            "content": "The Interactive Axiom Visualization Dashboard serves as an educational tool, helping users intuitively explore complex logical structures."
           },
           {
             "type": "text",
-            "content": "• Dynamic React-based dashboard for real-time axiom manipulation\n• Interactive force-directed graphs using D3.js\n• Custom-built theorem proving interface with Monaco Editor integration\n• Real-time visual feedback system for proof construction"
+            "content": "Features for Educational Assistance:\n- Dynamic Visualization: Uses real-time graph updates to illustrate how axioms relate to each other.\n- Interactive Exploration: Allows users to manipulate and interact with axiom structures, encouraging hands-on learning.\n\nHow It Assists Learning:\n- Visual Representation of Logic: Students can see relationships and structures that are hard to understand in text alone.\n- Reinforces Concepts through Exploration: Users can explore axiom connections and dependencies, solidifying their understanding through active engagement.\n\nEducational Impact:\n- This visual, hands-on approach aids comprehension of abstract logic, making complex concepts more accessible for all learning levels."
           }
         ]
       },
       {
-        "title": "Educational & Collaborative Features",
+        "title": "Guided Theorem Proving",
         "details": [
           {
             "type": "text",
-            "content": "The system includes comprehensive educational tools designed for various skill levels:"
+            "content": "The Theorem Proving Interface functions as an educational guide, leading users through constructing proofs in a structured, supportive way.\n"
           },
           {
             "type": "text",
-            "content": "• Interactive tutorials with progressive difficulty levels\n• Guided proof construction with immediate feedback\n• Visual proof explanation tools with step-by-step breakdowns\n• Collaborative workspaces for team-based theorem proving"
+            "content": "Features for Educational Assistance:\n- Step-by-Step Guidance: Offers a structured approach to building proofs, validating each step to prevent errors.\n- Syntax Highlighting: Highlights logical expressions to help learners understand syntax and recognize errors easily.\n\nHow It Assists Learning:\n- Progressive Proof Building: Breaking down proofs into individual steps helps learners focus on one part of the process at a time, reducing overwhelm.\n- Instant Validation & Feedback: Immediate feedback on each step enhances learning by reinforcing correct logic and guiding users to correct mistakes.\n\nEducational Impact:\n- This feature acts as a tutor, providing support, feedback, and structure that is crucial for both beginners learning proof techniques and advanced users refining their logic skills."
+          }
+        ]
+      },
+      {
+        "title": "Custom and Consistent UI Components",
+        "details": [
+          {
+            "type": "text",
+            "content": "Custom UI components serve as educational building blocks, creating a consistent, visually supportive environment for learning."
+          },
+          {
+            "type": "text",
+            "content": "Features for Educational Assistance:\n- Reusable Components: Custom-designed for displaying axioms, proof trees, and syntax highlighting, these components maintain a familiar look and feel.\n- Modular Design: Each component can be adapted to specific learning needs, whether displaying basic axioms for beginners or complex proofs for advanced users.\n\nHow It Assists Learning:\n- Cognitive Support through Consistency: Familiar components help learners focus on content without being distracted by changing interfaces.\n- Adaptable to Learning Scenarios: Modular design allows components to be tailored to different educational contexts, whether for tutorial mode or research exploration.\n\nEducational Impact:\n- The consistent design across all components creates a cohesive learning experience, helping students build familiarity and comfort with the interface, which in turn fosters focused and sustained learning."
           }
         ]
       }
@@ -71,34 +84,40 @@
     "title": "Backend Architecture",
     "content": [
       {
-        "title": "Advanced API & Integration Systems",
+        "title": "Axiom API Service",
         "details": [
           {
             "type": "text",
-            "content": "Our backend architecture features a robust and scalable design:"
+            "content": "Components:"
           },
           {
             "type": "text",
-            "content": "• RESTful and GraphQL APIs built with Node.js and TypeScript\n• Custom middleware for Coq and Isabelle integration\n• Distributed computing system for parallel proof verification\n• Real-time WebSocket system for collaborative proving"
+            "content": "Axiom Generation Endpoint: Programmatically creates axioms, supporting tailored learning paths from basic to complex logic.\nAxiom Retrieval Endpoint: Fetches detailed axiom data for targeted exploration, optimizing access with indexed databases.\nAxiom List Endpoint: Lists axioms with pagination and filtering, enabling students to explore multiple axioms side-by-side."
           }
         ]
       },
       {
-        "title": "System Architecture Benefits",
+        "title": "Real-Time Feedback System",
         "details": [
           {
             "type": "text",
-            "content": "The distributed architecture provides significant advantages:"
-          },
+            "content": "WebSocket Connection: Enables bi-directional, asynchronous communication for live feedback.\nProof Step Validation: Validates logic steps in real time, guiding students immediately on errors.\nAxiom Update Listener: Pushes changes to axioms instantly to the frontend, ensuring current data."
+          }
+        ]
+      },
+      {
+        "title": "Advanced Querying & Adaptive Learning Paths",
+        "details": [
           {
             "type": "text",
-            "content": "• 40% improvement in proof verification speed\n• Seamless handling of concurrent proof sessions\n• Automatic load balancing across computation nodes\n• Real-time conflict resolution in collaborative sessions"
+            "content": "GraphQL Query Handler: Supports complex, customizable queries for advanced data exploration.\nUse Case Manager: Adapts features based on user level, offering structured tutorials or open research tools.\nPlugin Loader: Integrates external tools like Coq, extending functionality for advanced theorem proving.\n"
           }
         ]
       }
     ]
   },
-  "benchmarking": {
+
+   "benchmarking": {
     "title": "Benchmarking & Performance",
     "content": [
       {
