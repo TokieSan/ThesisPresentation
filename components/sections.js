@@ -110,20 +110,12 @@
           },
           {
             "type": "text",
-            "content": "• 1,000+ automated test cases covering diverse logical systems\n• Performance metrics tracking for proof verification speed\n• Memory usage optimization and computational efficiency\n• Integration with MMLU benchmarks for accuracy assessment"
-          }
-        ]
-      },
-      {
-        "title": "Performance Improvements",
-        "details": [
-          {
-            "type": "text",
-            "content": "Key performance metrics show significant improvements:"
+            "content": "• Automated test cases covering diverse logical systems\n• Performance metrics tracking for proof verification speed\n• Memory usage optimization and computational efficiency\n• Integration with MMLU benchmarks for accuracy assessment"
           },
           {
-            "type": "text",
-            "content": "• 30% faster inference time in proof generation\n• 2% increase in MMLU benchmark accuracy\n• 45% reduction in false positive rates\n• 25% improvement in memory efficiency"
+            "type": "image",
+            "content": "https://svgshare.com/i/1CD3.svg",
+            "alt": "Benchmarks Architecture Diagram"
           }
         ]
       }
@@ -226,7 +218,7 @@
           },
           {
             "type": "text",
-            "content": "• Integration of more sophisticated reasoning patterns\n• Expansion of supported logical systems\n• Enhancement of collaborative proving capabilities\n• Development of advanced educational features"
+            "content": "• Integration of more sophisticated reasoning patterns\n• Complete the finetuning of the model with the current logical framework\n• Expansion of supported logical systems\n• Enhancement of collaborative proving capabilities\n• Development of advanced educational features"
           }
         ]
       },
