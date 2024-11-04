@@ -185,7 +185,7 @@
         "details": [
           {
             "type": "image",
-            "content": "https://svgshare.com/s/1CD2"
+            "content": "https://svgshare.com/s/1CD2https://svgshare.com/i/1CD2.svg"
           },
           {
             "type": "text",
