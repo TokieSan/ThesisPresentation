@@ -203,8 +203,7 @@ const PresentationSlides = () => {
         return (
           <div className="flex flex-col items-center justify-center h-full space-y-8">
             <ParanoidLogo className="w-2/3 max-w-2xl transition-all duration-500" />
-            <h1 className="text-4xl font-bold text-emerald-400 mt-8">Paranoid Android</h1>
-            <p className="text-xl text-gray-400">Intelligent Theorem Proving System</p>
+            <p className="text-xl text-gray-400">A Transformer-Based Cognitive Assistant with Formal Verification for Automated Task Sequencing and Hallucination Mitigation</p>
           </div>
         );
       
